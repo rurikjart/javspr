@@ -8,12 +8,10 @@ public class Test3
     public static void  main(String[] args) {
 
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("applicationContextT3.xml");
 
-        Pet pet = new Dog();
-        Person person = new Person(pet);
-        person.callYourPet();
-
-        context.close();
+      Person person = context.getBean("myPerson", Person.class);
+      person.callYourPet();
+      context.close();
     }
 }

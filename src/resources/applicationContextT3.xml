@@ -11,4 +11,11 @@
           class = "com.ut.spring.spring_introduction.Dog">
     </bean>
 
+    <bean id = "myPerson"
+          class = "com.ut.spring.spring_introduction.Person">
+        <constructor-arg ref="myPet" />
+    </bean>
+
+
+
 </beans>
