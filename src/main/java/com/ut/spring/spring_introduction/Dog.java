@@ -11,6 +11,14 @@ public class Dog implements Pet {
 
         System.out.println("Bow-Wow");
     }
+// инициализация бина
+    public void init(){
+        System.out.println("Class Dog: init method");
+    }
+// разрушение бина
+    public void destroy(){
+        System.out.println("Class Dog: destroy method");
+    }
 
     public String getName() {
         return name;
