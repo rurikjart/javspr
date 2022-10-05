@@ -13,13 +13,18 @@ public class Person {
     private String surname;
     private  int age;
 
-    public Person() {
+    @Autowired
+    public Person(@Qualifier("catBean") Pet pet) { // внедрение зависимости через конструктор класса с параметром
         System.out.println("Person bean is created");
-
+        this.pet = pet;
     }
 
-@Autowired
-@Qualifier("dog") //   внедрение зависимости с помощью сеттера
+    //public Person() {
+    //    System.out.println("Person bean is created");
+    // }
+
+//@Autowired
+//@Qualifier("dog") //   внедрение зависимости с помощью сеттера
     public void setPet(Pet pet) {
         System.out.println("Class Peron: set pet");
         this.pet=pet;
