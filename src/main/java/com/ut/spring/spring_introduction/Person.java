@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 public class Person {
 
-    @Qualifier("catBean")
-    @Autowired
+   // @Qualifier("catBean")
+   // @Autowired
     private Pet pet;
     private String surname;
     private  int age;
@@ -18,7 +18,8 @@ public class Person {
 
     }
 
-
+@Autowired
+@Qualifier("dog") //   внедрение зависимости с помощью сеттера
     public void setPet(Pet pet) {
         System.out.println("Class Peron: set pet");
         this.pet=pet;
