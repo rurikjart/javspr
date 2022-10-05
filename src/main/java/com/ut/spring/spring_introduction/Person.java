@@ -1,10 +1,13 @@
 package com.ut.spring.spring_introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
+
+    @Qualifier("dog")
     @Autowired
     private Pet pet;
     private String surname;
@@ -15,7 +18,7 @@ public class Person {
 
     }
 
-//@Autowired
+
     public void setPet(Pet pet) {
         System.out.println("Class Peron: set pet");
         this.pet=pet;
