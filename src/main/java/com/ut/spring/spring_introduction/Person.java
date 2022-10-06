@@ -11,9 +11,9 @@ public class Person {
    // @Qualifier("catBean")
    // @Autowired
     private Pet pet;
-    @Value("Artyukhov")
+    @Value("${person.surname}")
     private String surname;
-    @Value("33")
+    @Value("${person.age}")
     private  int age;
 
     @Autowired
@@ -26,8 +26,8 @@ public class Person {
     //    System.out.println("Person bean is created");
     // }
 
-//@Autowired
-//@Qualifier("dog") //   внедрение зависимости с помощью сеттера
+    //@Autowired
+    //@Qualifier("dog") //   внедрение зависимости с помощью сеттера
     public void setPet(Pet pet) {
         System.out.println("Class Peron: set pet");
         this.pet=pet;
