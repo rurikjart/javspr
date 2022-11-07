@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
-@Scope("prototype")
+//@Component
+//@Scope("prototype") // закоментим так как по 2-му способу не происходит сканирования
 public class Dog implements Pet {
     private String name;
     public Dog() {
