@@ -11,9 +11,9 @@ public class Person {
    // @Qualifier("catBean")
    // @Autowired
     private Pet pet;
-  //  @Value("${person.surname}")
+    @Value("${person.surname}")
     private String surname;
-  //  @Value("${person.age}")
+    @Value("${person.age}")
     private  int age;
 
    // @Autowired // закоментим так как по 2-му способу не происходит сканирования

@@ -1,13 +1,11 @@
 package com.ut.spring.spring_introduction;
 
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 @Configuration
 //@ComponentScan("com.ut.spring.spring_introduction") // закоментим так как по 2-му способу не происходит сканирования
+@PropertySource("classpath:myApp.properties")
 public class MyConfig {
 
     @Bean
