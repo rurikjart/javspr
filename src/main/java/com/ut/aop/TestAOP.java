@@ -6,10 +6,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class TestAOP {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(MyConfig.class);
+                new AnnotationConfigApplicationContext(MyConfig.class); //используется класс MyConfig.java  с аннотацией @EnableAspectJAutoProxy
 
-        Library library = context.getBean("libraryBean", Library.class);
-        library.getBook();
+        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class); // используется Library,.java для основного метода
+        uniLibrary.getBook();
+
+        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class); // используется Library,.java для основного метода
+        schoolLibrary.getBook();
 
         context.close();
     }
