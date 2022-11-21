@@ -10,4 +10,15 @@ public class SchoolLibrary extends AbstractLibrary {
         System.out.println("Мы берем книгу из SchoolLibrary");
 
     }
+
+    public void returnBook() {
+        System.out.println("Мы возвращаем книгу в UniLibrary");
+
+    }
+
+    public void getMagazine() {
+        System.out.println("Мы возвращаем журнал в UniLibrary");
+
+    }
+
 }
