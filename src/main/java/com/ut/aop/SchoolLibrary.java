@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SchoolLibrary extends AbstractLibrary {
 
-    @Override
+  //  @Override
     public void getBook() {
         System.out.println("Мы берем книгу из SchoolLibrary");
 
@@ -16,7 +16,7 @@ public class SchoolLibrary extends AbstractLibrary {
 
     }
 
-    public void getMagazine() {
+    public void getMagazine(int i) {
         System.out.println("Мы возвращаем журнал в UniLibrary");
 
     }

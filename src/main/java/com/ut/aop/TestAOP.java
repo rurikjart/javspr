@@ -9,13 +9,16 @@ public class TestAOP {
                 new AnnotationConfigApplicationContext(MyConfig.class); //используется класс MyConfig.java  с аннотацией @EnableAspectJAutoProxy
 
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class); // используется Library,.java для основного метода
-        uniLibrary.getBook();
+        Book book = context.getBean("book",Book.class);
+        uniLibrary.getBook(book);
+
+
 
 
         SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class); // используется Library,.java для основного метода
         schoolLibrary.getBook();
-        schoolLibrary.returnBook();
-        schoolLibrary.getMagazine();
+       // schoolLibrary.returnBook();
+       // schoolLibrary.getMagazine(18);
 
         context.close();
     }
