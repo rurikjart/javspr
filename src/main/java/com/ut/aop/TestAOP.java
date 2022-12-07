@@ -10,13 +10,13 @@ public class TestAOP {
 
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class); // используется Library,.java для основного метода
         Book book = context.getBean("book",Book.class);
-        uniLibrary.getBook(book);
+        uniLibrary.getBook();
+        uniLibrary.getMagazin();
 
 
 
-
-        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class); // используется Library,.java для основного метода
-        schoolLibrary.getBook();
+      //  SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class); // используется Library,.java для основного метода
+      //  schoolLibrary.getBook();
        // schoolLibrary.returnBook();
        // schoolLibrary.getMagazine(18);
 
