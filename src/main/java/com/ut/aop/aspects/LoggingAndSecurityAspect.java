@@ -9,12 +9,34 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAndSecurityAspect {
 
-    @Pointcut("execution(* com.ut.aop.aspects.get*())")
+   @Pointcut("execution(* com.ut.aop.UniLibrary.*(..))")
+    private void allMethodsFromUniLibrary() {
+
+   }
+
+   @Pointcut("execution(public void com.ut.aop.UniLibrary.returnMagazine())")
+    private void returnMagazineFromUniLibrary() {
+
+   }
+
+   @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+    private  void allMethodsExceptReturnMagazineFromUniLibrary() {
+
+   }
+
+    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+       System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #10");
+    }
+
+
+
+ /*   @Pointcut("execution(* com.ut.aop.UniLibrary.get*())")
     private  void allGetMethodsFromUniLibrary() {
 
     }
 
-    @Pointcut("execution(* com.ut.aop.aspects.return*())")
+    @Pointcut("execution(* com.ut.aop.UniLibrary.return*())")
     private  void allReturnMethodsFromUniLibrary() {
 
     }
@@ -41,7 +63,7 @@ public class LoggingAndSecurityAspect {
     @Before("allGetAndReturnMethodsFromUniLibrary()")
     public void beforeGetAndReturnLoggingAdvice() {
         System.out.print("beforeGetAndReturnLoggingAdvice: writing Log #3");
-    }
+    }*/
 
 
 
