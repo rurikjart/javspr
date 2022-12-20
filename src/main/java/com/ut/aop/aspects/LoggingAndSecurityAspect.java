@@ -9,7 +9,26 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAndSecurityAspect {
 
-   @Pointcut("execution(* com.ut.aop.UniLibrary.*(..))")
+
+    // порядок исполнения аспектов 20.12.2022
+
+    @Pointcut("execution(* get*())")
+    private void allGetMethods(){}
+
+    @Before("allGetMethods()")
+    public void beforeGetLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: попытка получить книгу/журнал");
+    }
+
+    @Before("allGetMethods()")
+    public void beforeGetSecurityAdvice() {
+        System.out.println("beforeGetLoggingAdvice: проверка прав на получение книги/журнала");
+    }
+
+    // конец порядок исполнения аспектов
+
+
+ /*  @Pointcut("execution(* com.ut.aop.UniLibrary.*(..))")
     private void allMethodsFromUniLibrary() {
 
    }
@@ -27,7 +46,7 @@ public class LoggingAndSecurityAspect {
     @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
     public void beforeAllMethodsExceptReturnMagazineAdvice() {
        System.out.println("beforeAllMethodsExceptReturnMagazineAdvice: Log #10");
-    }
+    }*/
 
 
 
