@@ -18,11 +18,13 @@ public class LoggingAndSecurityAspect {
     @Before("allGetMethods()")
     public void beforeGetLoggingAdvice() {
         System.out.println("beforeGetLoggingAdvice: попытка получить книгу/журнал");
+        System.out.println("-----------------------------------------------------");
     }
 
     @Before("allGetMethods()")
     public void beforeGetSecurityAdvice() {
         System.out.println("beforeGetLoggingAdvice: проверка прав на получение книги/журнала");
+        System.out.println("-----------------------------------------------------");
     }
 
     // конец порядок исполнения аспектов

@@ -6,12 +6,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class Book {
 
-    public static String getName;
-    @Value("Просто книга Мир!!!")
-    String name;
+    @Value("Преступление и наказание")
+    private String name;
 
+    @Value("Ф.М.Достоевский")
+    private String author;
+
+    @Value("1866")
+    private int yearOfPublication;
 
     public String getName() {
+
         return name;
+
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYearOfPublication() {
+        return yearOfPublication;
+    }
+
 }
