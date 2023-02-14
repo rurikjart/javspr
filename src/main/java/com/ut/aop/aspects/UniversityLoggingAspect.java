@@ -19,6 +19,24 @@ public class UniversityLoggingAspect {
 
     @AfterReturning(pointcut = "execution(* getStudents())", returning = "students")
     public void  afterReturningGetStudentsLoggingAdvice(List<Student> students) {
+
+
+        Student firstStudent = students.get(0);
+
+        //изменить имя студенту на нулевой позиции и записать его обратно в лист
+        String nameSurname = firstStudent.getNameSurname();
+        nameSurname = "Mr." + nameSurname;
+        firstStudent.setNameSurname(nameSurname);
+
+        // изменим среднюю оценку студенту
+        double avgGrade = firstStudent.getAvgGrade();
+        avgGrade = avgGrade + 1;
+        firstStudent.setAvgGrade(avgGrade);
+
+
+
+
+
         System.out.println("afterReturningGetStudentsLoggingAdvice: логируем получение" +
                 "списка студентов после работы метода getStudents");
     }
