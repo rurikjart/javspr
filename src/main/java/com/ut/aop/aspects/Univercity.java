@@ -23,6 +23,8 @@ public class Univercity {
     }
 
     public  List<Student> getStudents() {
+        System.out.println("Начало работы метода getStudents");
+        System.out.println(students.get(3));
         System.out.println("Information from method getStudents: ");
         System.out.println(students);
         return students;

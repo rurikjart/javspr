@@ -33,10 +33,6 @@ public class UniversityLoggingAspect {
         avgGrade = avgGrade + 1;
         firstStudent.setAvgGrade(avgGrade);
 
-
-
-
-
         System.out.println("afterReturningGetStudentsLoggingAdvice: логируем получение" +
                 "списка студентов после работы метода getStudents");
     }
