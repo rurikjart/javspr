@@ -1,12 +1,9 @@
 package com.ut.aop.aspects;
 
-import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
 @Component
 @Aspect

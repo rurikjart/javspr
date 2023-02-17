@@ -21,9 +21,7 @@ public class Test2 {
         } catch (Exception e){
             System.out.println("Было поймано исключение " + e);
         }
-
-
-
+        
         context.close();
 
     }
